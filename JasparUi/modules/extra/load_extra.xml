@@ -1,0 +1,14 @@
+﻿<Ui xmlns="http://www.blizzard.com/wow/ui/">	
+	<Script file="addonpanel.lua"/>
+	<Script file="post.lua"/>
+	<Script file="raidbuffreminder.lua"/>
+	<Script file="Tukui_extra.lua"/>
+	<Script file="align.lua"/>
+	<Script file="combattext.lua"/>
+	<Script file="raidutilities.lua"/>
+	<Script file="threatbar.lua"/>
+	<Script file="click2cast.lua"/>
+	<Script file="ilvlr.lua"/>
+	<Script file="fixes.lua"/>
+	<Script file="altpower.lua"/>
+</Ui>
