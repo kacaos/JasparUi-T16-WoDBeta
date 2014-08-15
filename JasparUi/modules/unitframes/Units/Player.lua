@@ -3,7 +3,6 @@ local TukuiUnitFrames = T["UnitFrames"]
 local Font = T.GetFont(C["UnitFrames"].Font)
 local Class = select(2, UnitClass("player"))
 local Panels = T["Panels"]
-local A1 = T["Panels"].ActionBar4
 
 hooksecurefunc(TukuiUnitFrames, "Player", function(Player)
 	---------------------------------------------------

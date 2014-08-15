@@ -1,4 +1,4 @@
-local T, C, L, G = Tukui:unpack()
+local T, C, L = Tukui:unpack()
 
 function JasparUI:AddRBReminder()
 --Locals

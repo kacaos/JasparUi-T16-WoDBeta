@@ -6,8 +6,6 @@
 	<Script file="core\functions.lua"/>
 	<Script file="core\launch.lua" />
 	<Script file="core\system.lua"/>
-	<Script file="core\filters\combattext.lua"/>
-	<Script file="core\filters\nameplates.lua"/>
 	<Script file="modules\Panels\Panels.lua"/>
 	<Script file="modules\map\minimap.lua"/>
 	<Script file="modules\Buffs\Buffs.lua"/>
@@ -23,4 +21,5 @@
 	<Script file="modules\ActionBars\barpet.lua"/>
 	<Script file="medias\medias.lua"/>
 	<Script file="core\test.lua"/>
+	<Script file="modules\Maps\minimap.lua"/>
 </Ui>

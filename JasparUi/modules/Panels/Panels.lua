@@ -1,5 +1,6 @@
 local T, C, L = Tukui:unpack()
 local Panels = T["Panels"]
+local Font = T.GetFont(C["UnitFrames"].Font)
 
 function JasparUI:AddNewPanels()
 --------------------------------------------
@@ -57,17 +58,6 @@ else
 	Panels.DataTextRight:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -5, 4)
 
 end
-
----------------------------------------------
--- Minimap Panels
----------------------------------------------
-
--- Set the Left Datatextpanel (Bottom of Minimap for Clock)
-Panels.MinimapDataTextOne:ClearAllPoints()
-Panels.MinimapDataTextOne:SetPoint("CENTER", T.Maps.Minimap, "BOTTOM", 0, 10)
-
--- Remove the Right Datatextpanel cause we dont need it
-Panels.MinimapDataTextTwo:Kill()
 
 ----------------------------------------------
 -- Move Petbar
