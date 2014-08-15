@@ -20,7 +20,7 @@ hooksecurefunc(TukuiUnitFrames, "Player", function(Player)
 	---------------------------------------------------	
 	--Health
 	---------------------------------------------------
-	Player.Health:Size( 204, 25 )
+	Player.Health:Size( 192, 25 )
 	Player.Health:CreateBackdrop("Default")
 	Player.Health.bg:SetVertexColor(.5, .5, .5)
 	Player.Health.Value:Point( "RIGHT", Player.Health, "RIGHT", -4, 0)
@@ -28,9 +28,9 @@ hooksecurefunc(TukuiUnitFrames, "Player", function(Player)
 	---------------------------------------------------	
 	--Power
 	---------------------------------------------------
-	Player.Power:Size( 204, 2 )
+	Player.Power:Size( 192, 2 )
 	Player.Power:ClearAllPoints()
-	Player.Power:Point( "BOTTOMLEFT", Player.Health, "TOPLEFT", 0, 4 )
+	Player.Power:Point( "BOTTOMLEFT", Player.Health, "TOPLEFT", 0, 3 )
 	Player.Power:SetFrameLevel( Player.Health:GetFrameLevel() + 2 )
 	Player.Power:CreateBackdrop("Default")
 	Player.Power.Value:Point( "LEFT", Player.Health, "LEFT", 4, 0)

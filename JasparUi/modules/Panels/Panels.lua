@@ -1,7 +1,7 @@
 local T, C, L = Tukui:unpack()
 local Panels = T["Panels"]
-local MiniMaps = _G["Minimap"]
 
+function JasparUI:AddNewPanels()
 --------------------------------------------
 -- Hide some Panels we dont need!
 --------------------------------------------
@@ -62,13 +62,20 @@ end
 -- Minimap Panels
 ---------------------------------------------
 
-_G["Minimap"]:SetFrameStrata("MEDIUM")
-_G["Minimap"]:SetFrameLevel(2)
-
 -- Set the Left Datatextpanel (Bottom of Minimap for Clock)
 Panels.MinimapDataTextOne:ClearAllPoints()
-Panels.MinimapDataTextOne:SetPoint("CENTER", TukuiMinimap, "BOTTOM", 0, 10)
-Panels.MinimapDataTextOne:StripTextures()
+Panels.MinimapDataTextOne:SetPoint("CENTER", T.Maps.Minimap, "BOTTOM", 0, 10)
 
 -- Remove the Right Datatextpanel cause we dont need it
 Panels.MinimapDataTextTwo:Kill()
+
+----------------------------------------------
+-- Move Petbar
+----------------------------------------------
+local PetSize = C.ActionBars.PetButtonSize
+local Spacing = C.ActionBars.ButtonSpacing
+
+Panels.PetActionBar:ClearAllPoints()
+Panels.PetActionBar:Size(PetSize * 10 + (Spacing * 11), PetSize + (Spacing * 2))
+Panels.PetActionBar:Point("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -55, 120)
+end

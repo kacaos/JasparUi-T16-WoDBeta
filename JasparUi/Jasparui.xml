@@ -1,4 +1,5 @@
 ﻿<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="core\init.lua"/>
 	<Include file="locales\load_locales.xml"/>
 	<Script file="config\config.lua"/>
 	<Script file="core\api.lua"/>
@@ -20,4 +21,6 @@
 	<Include file="modules\unitframes\load_unitframes.xml"/>
 	<Include file="modules\tooltip\load_tooltip.xml"/>
 	<Script file="modules\ActionBars\barpet.lua"/>
+	<Script file="medias\medias.lua"/>
+	<Script file="core\test.lua"/>
 </Ui>

@@ -1,9 +1,6 @@
 local T, C, L, G = Tukui:unpack()
-local MiniMaps = _G["Minimap"]
 
-
-_G["Minimap"]:Point("TOPRIGHT", UIParent, "TOPRIGHT", -40, -30)
-
+function JasparUI:AddRBReminder()
 --Locals
 --Setup Caster Buffs
 local function SetCasterOnlyBuffs()
@@ -173,12 +170,12 @@ local function OnAuraChange(self, event, arg1, unit)
 	end	
 end
 
-local RBRWidth = ((MiniMaps:GetWidth()) /6) + 4
+local RBRWidth = ((T.Maps.Minimap:GetWidth()) /6) + 3
 
 local raidbuff_reminder = CreateFrame('Frame', 'RaidBuffReminder', Minimap)
 raidbuff_reminder:Width(RBRWidth)
-raidbuff_reminder:Point('TOPLEFT', MiniMaps, 'TOPRIGHT', 12, 3)
-raidbuff_reminder:Point('BOTTOMLEFT', MiniMaps, 'BOTTOMRIGHT', 12, -3)
+raidbuff_reminder:Point('TOPLEFT', T.Maps.Minimap, 'TOPRIGHT', 2, 3)
+raidbuff_reminder:Point('BOTTOMLEFT', T.Maps.Minimap, 'BOTTOMRIGHT', 2, -3)
 
 raidbuff_reminder:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 raidbuff_reminder:RegisterEvent("UNIT_INVENTORY_CHANGED")
@@ -226,4 +223,5 @@ CreateButton("Spell3Frame", Spell2Frame, false)
 CreateButton("Spell4Frame", Spell3Frame, false)
 CreateButton("Spell5Frame", Spell4Frame, false)
 CreateButton("Spell6Frame", Spell5Frame, false, true)
+end
 end

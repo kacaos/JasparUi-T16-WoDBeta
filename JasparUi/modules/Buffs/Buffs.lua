@@ -2,6 +2,7 @@ local T, C, L = Tukui:unpack()
 local Headers = T.Auras.Headers
 local MiniMaps = _G["Minimap"]
 
+function JasparUI:AddNewBuffs()
 -- Resize Buffs/Debuffs offsets
 for i = 1, 2 do
 	if (i == 1) then
@@ -40,4 +41,5 @@ for _, frame in pairs(hooks) do
 	frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 	frame:HookScript("OnAttributeChanged", OnAttributeChanged)
 	frame:HookScript("OnEvent", OnAttributeChanged)
+end
 end

@@ -12,6 +12,7 @@ hooksecurefunc(TukuiUnitFrames, "Player", function(Player)
 		
 		for i = 1, 4 do
 			Player.WarlockSpecBars[i]:Height(4)
+			Player.WarlockSpecBars[i]:SetStatusBarTexture(C["Medias"].Blank)
 		end
 		
 		---------------------------------------------------------
@@ -24,7 +25,7 @@ hooksecurefunc(TukuiUnitFrames, "Player", function(Player)
 		sPowerBG:SetTemplate("Transparent")
 
 		local sPowerStatus = CreateFrame("StatusBar", "sPowerStatus", sPowerBG)
-		sPowerStatus:SetStatusBarTexture(C["Medias"].Normal)
+		sPowerStatus:SetStatusBarTexture(C["Medias"].Blank)
 		sPowerStatus:SetFrameLevel(6)
 		sPowerStatus:Point("TOPLEFT", sPowerBG, "TOPLEFT", 1, -1)
 		sPowerStatus:Point("BOTTOMRIGHT", sPowerBG, "BOTTOMRIGHT", -1, 1)

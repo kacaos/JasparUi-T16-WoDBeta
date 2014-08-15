@@ -1,3 +1,2 @@
 My ToDo List:
-- Target Buffs Position
 - Classbars

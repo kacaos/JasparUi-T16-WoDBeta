@@ -1,12 +1,12 @@
-local T, C, L = Tukui:unpack()
-local Panels = T["Panels"]
+local T, C, L, D = Tukui:unpack()
+local TukuiChat = T.Chat
 
-T.SetDefaultChatFramesPosition = function(frame)
+function TukuiChat:SetDefaultChatFramesPositions()
 	if (not TukuiDataPerChar.Chat) then
 		TukuiDataPerChar.Chat = {}
 	end
 
-	local Width = Panels.DataTextLeft:GetWidth()
+	local Width = T["Panels"].DataTextLeft:GetWidth()
 
 	for i = 1, NUM_CHAT_WINDOWS do
 		local Frame = _G["ChatFrame"..i]
@@ -42,7 +42,6 @@ T.SetDefaultChatFramesPosition = function(frame)
 		TukuiDataPerChar.Chat["Frame" .. i] = {Anchor1, Anchor2, X, Y, Width, 87}
 	end
 end
-hooksecurefunc( "FCF_RestorePositionAndDimensions", T.SetDefaultChatFramesPosition )
 
 -------------------------------------------------
 -- Hyperlink

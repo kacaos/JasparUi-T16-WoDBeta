@@ -14,7 +14,7 @@ hooksecurefunc(TukuiUnitFrames, "TargetOfTarget", function(TargetOfTarget)
 	--------------------------------------------------
 	--Health
 	--------------------------------------------------
-	TargetOfTarget.Health:Size( 90, 15 )
+	TargetOfTarget.Health:Size( 80, 15 )
 	TargetOfTarget.Health:CreateBackdrop("Default")
 	TargetOfTarget.Health.bg:SetVertexColor(.5, .5, .5)
 
@@ -24,5 +24,6 @@ hooksecurefunc(TukuiUnitFrames, "TargetOfTarget", function(TargetOfTarget)
 	TargetOfTarget.Name:ClearAllPoints()
 	TargetOfTarget.Name:SetParent(TargetOfTarget.Health)
 	TargetOfTarget.Name:Point("CENTER", TargetOfTarget.Health, "CENTER", 0, 0)
+	TargetOfTarget:Tag(TargetOfTarget.Name, "[Tukui:GetNameColor][Tukui:NameShort]")
 
 end)

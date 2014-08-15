@@ -14,7 +14,7 @@ hooksecurefunc(TukuiUnitFrames, "Pet", function(Pet)
 	--------------------------------------------------
 	--Health
 	--------------------------------------------------
-	Pet.Health:Size( 90, 15 )
+	Pet.Health:Size( 80, 15 )
 	Pet.Health:CreateBackdrop("Default")
 	Pet.Health.bg:SetVertexColor(.5, .5, .5)
 
@@ -24,6 +24,7 @@ hooksecurefunc(TukuiUnitFrames, "Pet", function(Pet)
 	Pet.Name:ClearAllPoints()
 	Pet.Name:SetParent(Pet.Health)
 	Pet.Name:Point("CENTER", Pet.Health, "CENTER", 0, 0)
+	Pet:Tag(Pet.Name, "[Tukui:GetNameColor][Tukui:NameMedium]")
 
 	--------------------------------------------------
 	--Power

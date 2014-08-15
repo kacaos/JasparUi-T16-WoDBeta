@@ -22,7 +22,7 @@ hooksecurefunc(TukuiUnitFrames, "Player", function(Player)
 		sPowerBG:SetTemplate("Default")
 
 		local sPowerStatus = CreateFrame("StatusBar", "sPowerStatus", sPowerBG)
-		sPowerStatus:SetStatusBarTexture(C["Medias"].Normal)
+		sPowerStatus:SetStatusBarTexture(C["Medias"].Blank)
 		sPowerStatus:SetFrameLevel(10)
 		sPowerStatus:Point("TOPLEFT", sPowerBG, "TOPLEFT", 2, -2)
 		sPowerStatus:Point("BOTTOMRIGHT", sPowerBG, "BOTTOMRIGHT", -2, 2)
