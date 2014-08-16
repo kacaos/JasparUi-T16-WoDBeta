@@ -1,6 +1,7 @@
-local T, C, L = Tukui:unpack()
+local T, C, L, D = Tukui:unpack()
 
 function JasparUI:AddRBReminder()
+
 --Locals
 --Setup Caster Buffs
 local function SetCasterOnlyBuffs()

@@ -15,5 +15,6 @@
 	<Script file="Groups\Party.lua"/>
 	<Script file="Classes\Monk.lua"/>
 	<Script file="Classes\Warlock.lua"/>
+	<Script file="Classes\Shaman.lua"/>
 	<Script file="positions.lua"/>
 </Ui>

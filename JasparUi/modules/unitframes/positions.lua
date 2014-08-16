@@ -2,7 +2,6 @@ local T, C, L, G = unpack( Tukui )
 local TukuiUnitFrames = T["UnitFrames"]
 local Panels = T["Panels"]
 
---Position
 -- Size & Position
 hooksecurefunc(TukuiUnitFrames, "CreateUnits", function()
 	local Player = TukuiUnitFrames.Units.Player
@@ -16,17 +15,18 @@ hooksecurefunc(TukuiUnitFrames, "CreateUnits", function()
 	local Raid = TukuiUnitFrames.Headers.Raid
 	local RaidPet = TukuiUnitFrames.Headers.RaidPet
 
-	Target:ClearAllPoints()
-	ToT:ClearAllPoints()
-	Player:ClearAllPoints()
-	Raid:ClearAllPoints()
-	Pet:ClearAllPoints()
-	
+	-- Size
 	Player:Size(192, 25)
 	Target:Size(192, 25)
 	ToT:Size(80, 15)
 	Pet:Size(80, 15)
 	
+	-- Position
+	Target:ClearAllPoints()
+	ToT:ClearAllPoints()
+	Player:ClearAllPoints()
+	Raid:ClearAllPoints()
+	Pet:ClearAllPoints()
 	
 	Player:SetPoint("BOTTOMLEFT", TukuiUnitFrames.Anchor, "TOPLEFT", -30, 150)
 	Target:SetPoint("BOTTOMRIGHT", TukuiUnitFrames.Anchor, "TOPRIGHT", 30, 150)
