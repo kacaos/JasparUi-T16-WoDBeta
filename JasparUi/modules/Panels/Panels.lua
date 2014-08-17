@@ -1,6 +1,5 @@
 local T, C, L = Tukui:unpack()
 local Panels = T["Panels"]
-local Font = T.GetFont(C["UnitFrames"].Font)
 
 function JasparUI:AddNewPanels()
 --------------------------------------------

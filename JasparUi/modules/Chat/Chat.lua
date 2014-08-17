@@ -27,11 +27,19 @@ function TukuiChat:SetDefaultChatFramesPositions()
 		end
 		
 		if (ID == 1) then
-			FCF_SetWindowName(Frame, "G, S & W")
+			FCF_SetWindowName(Frame, "General")
 		end
 		
-		if (ID == 2) then
+		if (ID == 2) then 
 			FCF_SetWindowName(Frame, "Log")
+		end
+		
+		if (ID == 3) then
+			FCF_SetWindowName(Frame, "Whisper")
+		end
+		
+		if (ID == 4) then
+			FCF_SetWindowName(Frame, "Loot")
 		end
 		
 		if (not Frame.isLocked) then
