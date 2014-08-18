@@ -1,5 +1,4 @@
 JasparUi-T16-WoDBeta
-====================
 
 Edited version of Tukui.
 
