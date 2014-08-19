@@ -1,71 +1,72 @@
 local T, C, L, D = Tukui:unpack()
 
 function JasparUI:AddRBReminder()
+if not C.Extra.BuffReminder == true then return end
 
---Locals
---Setup Caster Buffs
 local function SetCasterOnlyBuffs()
 	Spell1Buff = {
-		77747, -- Burning Wrath
-		109773, -- Dark Intent
 		1459, -- Arcane Brilliance
 		61316, -- Dalaran Brilliance
+		109773, -- Dark Intent
 	}
-	Spell2Buff = { --Total Stats
-		24907, -- Moonkin Aura
-		51470, -- Elemental Oath
+	Spell2Buff = {
+		--24907, -- Moonkin Aura
 		49868, -- Mind Quickening
 	}
-	Spell3Buff = { --Total Stats
-		117667, --Legacy of The Emperor
-		1126, 	-- Mark of The Wild
-		20217, 	-- Blessing Of Kings
+	Spell3Buff = {
+		1126, -- Mark of the Wild
+		20217, -- Blessing of Kings
+		115921, -- Legacy of the Emperor
 	}
-	Spell4Buff = { --Total Stamina
+	Spell4Buff = {
 		469, -- Commanding Shout
-		-- 6307, -- Imp. Blood Pact
 		21562, -- Power Word: Fortitude
-		109773, -- Power Word: Fortitude
+		109773, -- Dark Intent
+		90364, -- Qiraji Fortitude
 	}
-	Spell5Buff = { --Total Mana
-		116956, --Grace of Air
+	Spell5Buff = {
 		19740, -- Blessing of Might
+		116956, -- Grace of Air
 	}
-	Spell6Buff = { --Crit
+	Spell6Buff = {
 		1459, -- Arcane Brilliance
-		24932, -- Leader of The Pact
+		24932, -- Leader of the Pack
+		61316, -- Dalaran Brilliance
 		116781, -- Legacy of the White Tiger
 	}
 end
 
---Setup everyone else's buffs
 local function SetBuffs()
-	Spell1Buff = { -- Attack Speed
-		30809, -- Unleashed Rage
+	Spell1Buff = {
+		55610, -- Unholy Aura
 		113742, -- Swiftblade's Cunning
-		55610, -- Improved Icy Talons
+		128432, -- Cackling Howl
 	}
-	Spell2Buff = { -- 5% crit
-		166916, -- Windflurry
+	Spell2Buff = {
+		1459, -- Arcane Brilliance
+		24932, -- Leader of the Pack
+		61316, -- Dalaran Brilliance
+		109773, -- Dark Intent
+		116781, -- Legacy of the White Tiger
 	}
-	Spell3Buff = { --Total Stats
-		1126, -- "Mark of the wild"
-		20217, --"Greater Blessing of Kings",
-		116781, --Legacy of The Emperor
+	Spell3Buff = {
+		1126, -- Mark of the Wild
+		20217, -- Blessing of Kings
+		115921, -- Legacy of the Emperor
 	}
-	Spell4Buff = { --Total Stamina
+	Spell4Buff = {
 		469, -- Commanding Shout
-		-- 6307, -- Imp. Blood Pact
 		21562, -- Power Word: Fortitude
-		109773, -- Power Word: Fortitude
+		109773,	-- Dark Intent
+		90364, -- Qiraji Fortitude
 	}
-	Spell5Buff = { --Mastery
-		116956, --Grace of Air
+	Spell5Buff = {
 		19740, -- Blessing of Might
+		116956, -- Grace of Air
 	}
-	Spell6Buff = { --Total AP
-		19506, -- Trueshot Aura
+	Spell6Buff = {
 		6673, -- Battle Shout
+		19506, -- Trueshot Aura
 		57330, -- Horn of Winter
 	}
 end
@@ -73,7 +74,7 @@ end
 
 --Main Script
 local function OnAuraChange(self, event, arg1, unit)
-	if (event == "UNIT_AURA" and arg1 ~= "player") then 
+	if event == "UNIT_AURA" and arg1 ~= "player" then 
 		return
 	end
 	
@@ -188,9 +189,6 @@ raidbuff_reminder:RegisterEvent("UPDATE_BONUS_ACTIONBAR")
 raidbuff_reminder:RegisterEvent("CHARACTER_POINTS_CHANGED")
 raidbuff_reminder:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 raidbuff_reminder:SetScript("OnEvent", OnAuraChange)
-raidbuff_reminder:SetScript("OnMouseUp", microMenuGenerator)
-
-
 
 --Function to create buttons
 local function CreateButton(name, relativeTo, firstbutton, lastbutton)

@@ -1,7 +1,8 @@
 local T, C, L, D = Tukui:unpack()
 local TukuiChat = T.Chat
+local Panels = T["Panels"]
 
-function TukuiChat:SetDefaultChatFramesPositions()
+hooksecurefunc(TukuiChat, "SetDefaultChatFramesPositions", function()
 	if (not TukuiDataPerChar.Chat) then
 		TukuiDataPerChar.Chat = {}
 	end
@@ -18,11 +19,11 @@ function TukuiChat:SetDefaultChatFramesPositions()
 		-- Set default chat frame position
 		if (ID == 1) then
 			Frame:ClearAllPoints()
-			Frame:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMLEFT", 8, 26)
+			Frame:SetPoint("BOTTOMLEFT", Panels.DataTextLeft, "BOTTOMLEFT", 8, 26)
 		elseif (C.Chat.LootFrame and ID == 4) then
 			if (not Frame.isDocked) then
 				Frame:ClearAllPoints()
-				Frame:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -8, 26)
+				Frame:SetPoint("BOTTOMRIGHT", Panels.DataTextRight, "BOTTOMRIGHT", 0, 27)
 			end
 		end
 		
@@ -49,7 +50,24 @@ function TukuiChat:SetDefaultChatFramesPositions()
 		local Anchor1, Parent, Anchor2, X, Y = Frame:GetPoint()
 		TukuiDataPerChar.Chat["Frame" .. i] = {Anchor1, Anchor2, X, Y, Width, 87}
 	end
-end
+end)
+
+local Toast = BNToastFrame
+local ToastCloseButton = BNToastFrameCloseButton
+hooksecurefunc(TukuiChat, "SkinToastFrame", function()
+	Toast:SetTemplate()
+	Toast:CreateShadow()
+	ToastCloseButton:SkinCloseButton()
+	Toast:ClearAllPoints()
+	
+	if C.Chat.Background then
+		local Backdrop = T["Panels"].LeftChatBG
+		
+		Toast:Point("BOTTOMLEFT", Backdrop, "TOPLEFT", 5, 6)
+	else
+		Toast:Point("BOTTOMLEFT", ChatFrame1, "TOPLEFT", 5, 6)
+	end
+end)
 
 -------------------------------------------------
 -- Hyperlink

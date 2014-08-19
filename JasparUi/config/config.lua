@@ -71,3 +71,15 @@ D["Tooltips"] = {
 	["HealthFont"] = "Pixel",
 	["HealthTexture"] = "Blank",
 }
+
+D["Extra"] = {
+	["BuffReminder"] = false,
+}
+
+local Extra = {
+	["BuffReminder"] = {
+			["Name"] = "Show Raidbuffreminder",
+			["Desc"] = "Enable Raidbuffreminder next to the Minimap",
+	},
+}
+TukuiConfig.enUS["Extra"] = Extra

@@ -51,10 +51,13 @@ if C.Chat.Background == true then
 else
 
 	-- Left DataText	
+	--Panels.DataTextLeft:SetClampedToScreen(false)
 	Panels.DataTextLeft:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMLEFT", 5, 4)
+	Panels.DataTextLeft:SetBackdropColor(0,0,0,0)
 	
 	-- Right DataText
 	Panels.DataTextRight:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -5, 4)
+	Panels.DataTextRight:SetBackdropColor(0,0,0,0)
 
 end
 
