@@ -76,10 +76,45 @@ D["Extra"] = {
 	["BuffReminder"] = false,
 }
 
+D["ClassBars"] = {
+	["Shaman"] = true,
+	["Warlock"] = true,
+	["Monk"] = true,
+	["Druid"] = true,
+	["Mage"] = true,
+}
+	
+---------------------------------------------
+-- Locals
+---------------------------------------------
 local Extra = {
 	["BuffReminder"] = {
 			["Name"] = "Show Raidbuffreminder",
 			["Desc"] = "Enable Raidbuffreminder next to the Minimap",
 	},
 }
+
+local ClassBars = {
+	["Shaman"] = {
+			["Name"] = "Enable Shaman Classbar",
+			["Desc"] = "Enable Shaman Classbar",
+	},
+	["Warlock"] = {
+			["Name"] = "Enable Warlock Classbar",
+			["Desc"] = "Enable Warlock Classbar",
+	},
+	["Monk"] = {
+			["Name"] = "Enable Monk Classbar",
+			["Desc"] = "Enable Monk Classbar",
+	},
+	["Druid"] = {
+			["Name"] = "Enable Druid Eclipsebar",
+			["Desc"] = "Enable Druid Eclipsebar",
+	},
+	["Mage"] = {
+			["Name"] = "Enable Mage Classbar",
+			["Desc"] = "Enable Mage Classbar",
+	},
+}
 TukuiConfig.enUS["Extra"] = Extra
+TukuiConfig.enUS["ClassBars"] = ClassBars

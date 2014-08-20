@@ -39,7 +39,13 @@ hooksecurefunc(TukuiUnitFrames, "Player", function(Player)
 	---------------------------------------------------
 	Player.Castbar:ClearAllPoints()
 	Player.Castbar:SetPoint("CENTER", UIParent, "CENTER", 8, -120)
-	Player.Castbar:Width(184)
+	
+	if (Class == "MAGE") then
+		Player.Castbar:Width(234)
+	else
+		Player.Castbar:Width(184)
+	end
+	
 	Player.Castbar:Height(13)
 	Player.Castbar:CreateBackdrop()
 
