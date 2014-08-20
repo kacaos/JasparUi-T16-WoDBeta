@@ -16,4 +16,5 @@
 	<Script file="modules\Maps\minimap.lua"/>
 	<Script file="modules\DataTexts\default_positions.lua"/>
 	<Script file="modules\Chat\install_chat.lua"/>
+	<Script file="modules\Skins\blizzard.lua"/>
 </Ui>

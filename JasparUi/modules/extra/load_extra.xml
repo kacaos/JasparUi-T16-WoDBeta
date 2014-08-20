@@ -2,4 +2,7 @@
 	<Script file="raidbuffreminder.lua"/>
 	<Script file="threatbar.lua"/>
 	<Script file="altpower.lua"/>
+	<Script file="align.lua"/>
+	<Script file="ilvlr.lua"/>
+	<Script file="mail.lua"/>
 </Ui>
