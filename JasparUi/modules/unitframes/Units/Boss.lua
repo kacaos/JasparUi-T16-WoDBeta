@@ -36,22 +36,23 @@ hooksecurefunc(TukuiUnitFrames, "Boss", function(Boss)
 	--------------------------------------------------
 	-- Castbar
 	--------------------------------------------------
-	Boss.Castbar:ClearAllPoints()
-	Boss.Castbar:SetPoint("TOPRIGHT", Boss, "BOTTOMRIGHT", -1, -4)
-	Boss.Castbar:Width(177)
-	Boss.Castbar:Height(15)
-	Boss.Castbar:CreateBackdrop()
+	if C.UnitFrames.CastBar == true then
+		Boss.Castbar:ClearAllPoints()
+		Boss.Castbar:SetPoint("TOPRIGHT", Boss, "BOTTOMRIGHT", -1, -4)
+		Boss.Castbar:Width(177)
+		Boss.Castbar:Height(15)
+		Boss.Castbar:CreateBackdrop()
 
-	Boss.Castbar.Time:ClearAllPoints()
-	Boss.Castbar.Time:SetPoint("RIGHT", Boss.Castbar, "RIGHT", -4, 0)
+		Boss.Castbar.Time:ClearAllPoints()
+		Boss.Castbar.Time:SetPoint("RIGHT", Boss.Castbar, "RIGHT", -4, 0)
 
-	if (C.UnitFrames.CastBarIcon) then
-		Boss.Castbar.Button:ClearAllPoints()
-		Boss.Castbar.Button:Point("RIGHT", Boss.Castbar, "LEFT", -4, 0)
-		Boss.Castbar.Button:Size(19)
+		if (C.UnitFrames.CastBarIcon) then
+			Boss.Castbar.Button:ClearAllPoints()
+			Boss.Castbar.Button:Point("RIGHT", Boss.Castbar, "LEFT", -4, 0)
+			Boss.Castbar.Button:Size(19)
+		end
+
+		Boss.Castbar.Text:ClearAllPoints()
+		Boss.Castbar.Text:SetPoint("LEFT", Boss.Castbar, "LEFT", 4, 0)
 	end
-
-	Boss.Castbar.Text:ClearAllPoints()
-	Boss.Castbar.Text:SetPoint("LEFT", Boss.Castbar, "LEFT", 4, 0)
-
 end)

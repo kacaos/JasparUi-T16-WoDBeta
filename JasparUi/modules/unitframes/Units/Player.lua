@@ -3,6 +3,7 @@ local TukuiUnitFrames = T["UnitFrames"]
 local Font = T.GetFont(C["UnitFrames"].Font)
 local Class = select(2, UnitClass("player"))
 local Panels = T["Panels"]
+local Movers = T["Movers"]
 
 hooksecurefunc(TukuiUnitFrames, "Player", function(Player)
 	---------------------------------------------------
@@ -37,30 +38,32 @@ hooksecurefunc(TukuiUnitFrames, "Player", function(Player)
 	---------------------------------------------------
 	-- Castbar
 	---------------------------------------------------
-	Player.Castbar:ClearAllPoints()
-	Player.Castbar:SetPoint("CENTER", UIParent, "CENTER", 8, -120)
-	
-	if (Class == "MAGE") then
-		Player.Castbar:Width(234)
-	else
-		Player.Castbar:Width(184)
+	if C.UnitFrames.CastBar == true then
+		Player.Castbar:ClearAllPoints()
+		local CBMover = CreateFrame("Frame", "Move Player Castbar", UIParent)
+		CBMover:SetPoint("CENTER", UIParent, "CENTER", 8, -120)
+		CBMover:Width(C.CastBars.PlayerWidth)
+		CBMover:Height(C.CastBars.PlayerHeight)
+		
+		Player.Castbar:SetPoint("CENTER", CBMover, "CENTER", 0, 0)
+		Player.Castbar:Width(C.CastBars.PlayerWidth)
+		Player.Castbar:Height(C.CastBars.PlayerHeight)
+		Player.Castbar:CreateBackdrop()
+
+		Player.Castbar.Time:ClearAllPoints()
+		Player.Castbar.Time:SetPoint("RIGHT", Player.Castbar, "RIGHT", -4, 0)
+
+		if (C.UnitFrames.CastBarIcon) then
+			Player.Castbar.Button:ClearAllPoints()
+			Player.Castbar.Button:Point("RIGHT", Player.Castbar, "LEFT", -2, 0)
+			Player.Castbar.Button:Size(C.CastBars.PCBIconSize)
+		end
+
+		Player.Castbar.Text:ClearAllPoints()
+		Player.Castbar.Text:SetPoint("LEFT", Player.Castbar, "LEFT", 4, 0)
+		
+		Movers:RegisterFrame(CBMover)
 	end
-	
-	Player.Castbar:Height(13)
-	Player.Castbar:CreateBackdrop()
-
-	Player.Castbar.Time:ClearAllPoints()
-	Player.Castbar.Time:SetPoint("RIGHT", Player.Castbar, "RIGHT", -4, 0)
-
-	if (C.UnitFrames.CastBarIcon) then
-		Player.Castbar.Button:ClearAllPoints()
-		Player.Castbar.Button:Point("RIGHT", Player.Castbar, "LEFT", -2, 0)
-		Player.Castbar.Button:Size(15)
-	end
-
-	Player.Castbar.Text:ClearAllPoints()
-	Player.Castbar.Text:SetPoint("LEFT", Player.Castbar, "LEFT", 4, 0)
-	
 	---------------------------------------------------
 	-- Classicons
 	---------------------------------------------------

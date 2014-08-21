@@ -1,29 +1,37 @@
 T, C, L = Tukui:unpack()
 local TukuiUnitFrames = T["UnitFrames"]
 local Class = select(2, UnitClass("player"))
+local Movers = T["Movers"]
 T.myname = select(1, UnitName("player"))
+
 
 hooksecurefunc(TukuiUnitFrames, "Player", function(Player)
 	if (Class == "WARLOCK") then
 		if C.ClassBars.Warlock == false then
 			Player.WarlockSpecBars:SetAlpha(0)
 		else
+			local WarlockMover = CreateFrame("Frame", "Move Warlock Classbar", UIParent)
+		
 			if (T.myname == "Jasjas") then
-				Player.WarlockSpecBars:ClearAllPoints()
-				Player.WarlockSpecBars:Point("CENTER", UIParent, "CENTER", 0, -100)
+				WarlockMover:Size(202, 6)
+				WarlockMover:SetPoint("CENTER", UIParent, "CENTER", 0, -100)
 				Player.WarlockSpecBars:SetWidth(200)
 			else
-				Player.WarlockSpecBars:ClearAllPoints()
-				Player.WarlockSpecBars:Point("CENTER", Player.Power, "CENTER", 0, 6)
+				WarlockMover:Size(194, 6)
+				WarlockMover:SetPoint("CENTER", Player.Power, "CENTER", 0, 6)
 				Player.WarlockSpecBars:SetWidth(192)
 			end
 			
+			Player.WarlockSpecBars:ClearAllPoints()
+			Player.WarlockSpecBars:Point("CENTER", WarlockMover, "CENTER", 0, 0)
 			Player.WarlockSpecBars:SetHeight(4)
 			
 			for i = 1, 4 do
 				Player.WarlockSpecBars[i]:Height(4)
 				Player.WarlockSpecBars[i]:SetStatusBarTexture(C["Medias"].Blank)
 			end
+			
+			Movers:RegisterFrame(WarlockMover)
 		
 			if (T.myname == "Jasjas") then
 				---------------------------------------------------------

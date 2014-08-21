@@ -39,21 +39,22 @@ hooksecurefunc(TukuiUnitFrames, "FocusTarget", function(FocusTarget)
 	--------------------------------------------------
 	-- Castbar
 	--------------------------------------------------
-	FocusTarget.Castbar:ClearAllPoints()
-	FocusTarget.Castbar:SetPoint("TOPRIGHT", FocusTarget, "BOTTOMRIGHT", -1, 0)
-	FocusTarget.Castbar:Width(FocusTarget.Health:GetWidth()-24)
-	FocusTarget.Castbar:Height(15)
+	if C.UnitFrames.CastBar == true then
+		FocusTarget.Castbar:ClearAllPoints()
+		FocusTarget.Castbar:SetPoint("TOPRIGHT", FocusTarget, "BOTTOMRIGHT", -1, 0)
+		FocusTarget.Castbar:Width(FocusTarget.Health:GetWidth()-24)
+		FocusTarget.Castbar:Height(15)
 
-	FocusTarget.Castbar.Time:ClearAllPoints()
-	FocusTarget.Castbar.Time:SetPoint("RIGHT", FocusTarget.Castbar, "RIGHT", -4, 0)
+		FocusTarget.Castbar.Time:ClearAllPoints()
+		FocusTarget.Castbar.Time:SetPoint("RIGHT", FocusTarget.Castbar, "RIGHT", -4, 0)
 
-	if (C.UnitFrames.CastBarIcon) then
-		FocusTarget.Castbar.Button:ClearAllPoints()
-		FocusTarget.Castbar.Button:Point("RIGHT", FocusTarget.Castbar, "LEFT", -5, 0)
-		FocusTarget.Castbar.Button:Size(19)
+		if (C.UnitFrames.CastBarIcon) then
+			FocusTarget.Castbar.Button:ClearAllPoints()
+			FocusTarget.Castbar.Button:Point("RIGHT", FocusTarget.Castbar, "LEFT", -5, 0)
+			FocusTarget.Castbar.Button:Size(19)
+		end
+
+		FocusTarget.Castbar.Text:ClearAllPoints()
+		FocusTarget.Castbar.Text:SetPoint("LEFT", FocusTarget.Castbar, "LEFT", 4, 0)
 	end
-
-	FocusTarget.Castbar.Text:ClearAllPoints()
-	FocusTarget.Castbar.Text:SetPoint("LEFT", FocusTarget.Castbar, "LEFT", 4, 0)
-
 end)

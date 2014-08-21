@@ -82,39 +82,17 @@ D["ClassBars"] = {
 	["Monk"] = true,
 	["Druid"] = true,
 	["Mage"] = true,
-}
-	
----------------------------------------------
--- Locals
----------------------------------------------
-local Extra = {
-	["BuffReminder"] = {
-			["Name"] = "Show Raidbuffreminder",
-			["Desc"] = "Enable Raidbuffreminder next to the Minimap",
-	},
+	["Paladin"] = true,
+	["Priest"] = true,
+	["Deathknight"] = true,
+	["Warrior"] = true,
 }
 
-local ClassBars = {
-	["Shaman"] = {
-			["Name"] = "Enable Shaman Classbar",
-			["Desc"] = "Enable Shaman Classbar",
-	},
-	["Warlock"] = {
-			["Name"] = "Enable Warlock Classbar",
-			["Desc"] = "Enable Warlock Classbar",
-	},
-	["Monk"] = {
-			["Name"] = "Enable Monk Classbar",
-			["Desc"] = "Enable Monk Classbar",
-	},
-	["Druid"] = {
-			["Name"] = "Enable Druid Eclipsebar",
-			["Desc"] = "Enable Druid Eclipsebar",
-	},
-	["Mage"] = {
-			["Name"] = "Enable Mage Classbar",
-			["Desc"] = "Enable Mage Classbar",
-	},
+D["CastBars"] = {
+	["PlayerWidth"] =  184,
+	["PlayerHeight"] = 13,
+	["PCBIconSize"] = 15,
+	["TargetWidth"] = 250,
+	["TargetHeight"] = 25,
+	["TCBIconSize"] = 36,
 }
-TukuiConfig.enUS["Extra"] = Extra
-TukuiConfig.enUS["ClassBars"] = ClassBars

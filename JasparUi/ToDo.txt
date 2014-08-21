@@ -1,8 +1,5 @@
 My ToDo List:
 - Classbars
-	- Deathknight?!
-	- Hunter
-	- Paladin
-	- Rogue
-	- Warrior
-	- Priest
+	- Hunter?!
+	- Rogue?!
+	- Druid Cat?!

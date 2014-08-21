@@ -3,6 +3,7 @@ local TukuiUnitFrames = T["UnitFrames"]
 local Font = T.GetFont(C["UnitFrames"].Font)
 local Class = select(2, UnitClass("target"))
 local Panels = T["Panels"]
+local Movers = T["Movers"]
 
 hooksecurefunc(TukuiUnitFrames, "Target", function(Target)
 	--------------------------------------------------
@@ -52,24 +53,32 @@ hooksecurefunc(TukuiUnitFrames, "Target", function(Target)
 	---------------------------------------------------
 	-- Castbar
 	---------------------------------------------------
-	Target.Castbar:ClearAllPoints()
-	Target.Castbar:SetPoint("CENTER", UiParent, "CENTER", 0, 200)
-	Target.Castbar:Width(250)
-	Target.Castbar:Height(25)
-	Target.Castbar:CreateBackdrop()
+	if C.UnitFrames.CastBar == true then
+		local CBTMover = CreateFrame("Frame", "Move Target Castbar", UIParent)
+		CBTMover:SetPoint("CENTER", UIParent, "CENTER", 0, 200)
+		CBTMover:Width(C.CastBars.TargetWidth)
+		CBTMover:Height(C.CastBars.TargetHeight)
+		
+		Target.Castbar:ClearAllPoints()
+		Target.Castbar:SetPoint("CENTER", CBTMover, "CENTER", 0, 0)
+		Target.Castbar:Width(C.CastBars.TargetWidth)
+		Target.Castbar:Height(C.CastBars.TargetHeight)
+		Target.Castbar:CreateBackdrop()
 
-	Target.Castbar.Time:ClearAllPoints()
-	Target.Castbar.Time:SetPoint("RIGHT", Target.Castbar, "RIGHT", -4, 0)
+		Target.Castbar.Time:ClearAllPoints()
+		Target.Castbar.Time:SetPoint("RIGHT", Target.Castbar, "RIGHT", -4, 0)
 
-	if (C.UnitFrames.CastBarIcon) then
-		Target.Castbar.Button:ClearAllPoints()
-		Target.Castbar.Button:Point("CENTER", Target.Castbar, "CENTER", 0, 33)
-		Target.Castbar.Button:Size(36)
+		if (C.UnitFrames.CastBarIcon) then
+			Target.Castbar.Button:ClearAllPoints()
+			Target.Castbar.Button:Point("CENTER", Target.Castbar, "CENTER", 0, 33)
+			Target.Castbar.Button:Size(C.CastBars.TCBIconSize)
+		end
+
+		Target.Castbar.Text:ClearAllPoints()
+		Target.Castbar.Text:SetPoint("LEFT", Target.Castbar, "LEFT", 4, 0)
+		
+		Movers:RegisterFrame(CBTMover)
 	end
-
-	Target.Castbar.Text:ClearAllPoints()
-	Target.Castbar.Text:SetPoint("LEFT", Target.Castbar, "LEFT", 4, 0)
-
 	---------------------------------------------------
 	-- Combopoints
 	---------------------------------------------------

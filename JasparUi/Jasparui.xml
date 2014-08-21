@@ -1,6 +1,6 @@
 ﻿<Ui xmlns="http://www.blizzard.com/wow/ui/">
 	<Script file="core\init.lua"/>
-	<Include file="locales\load_locales.xml"/>
+	<Script file="locales\locales.lua"/>
 	<Script file="config\config.lua"/>
 	<Script file="core\api.lua"/>
 	<Script file="core\functions.lua"/>
